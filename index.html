@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magyar Egészség Piknik</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" href="icon.png" type="image/png">
   <style>
     @font-face {
       font-family: 'Oilvare Base';
@@ -76,12 +77,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 1rem;
+      padding: 0rem 1rem;
       border-bottom: 1px solid #ddd;
     }
 
     header img.logo {
-      height: 40px;
+      height: 50px;
       cursor: pointer;
     }
 
@@ -143,14 +144,17 @@
 
     .title-strip {
       width: 100vw;
-      /* full viewport width */
       background-color: #f04f58;
       padding: 1.5rem 0;
       box-sizing: border-box;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      /* <-- ez a kulcs */
+      align-items: center;
+      /* középre igazítás */
       z-index: 1;
     }
+
 
     .title-strip h1 {
       color: white;
@@ -160,6 +164,16 @@
       margin: 0;
       max-width: 100%;
       /* prevent overflow */
+      text-align: center;
+    }
+
+    .title-strip p {
+      display: block;
+      color: white;
+      font-family: 'Oilvare Base', serif;
+      font-size: 2rem;
+      text-shadow: 0 2px 0 #256d85;
+      margin: 0.1em 0 0 0;
       text-align: center;
     }
 
@@ -356,76 +370,87 @@
     }
 
     .menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
 
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1001;
-}
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-/* Base nav links styling */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
+    .disclaimer {
+      background-color: rgba(37, 109, 133, 0.1);
+      padding: 10px 15px;
+      margin: 10px 0 20px 0;
+      border-left: 4px solid #256d85;
+      font-size: 20px;
+      color: #333;
+      font-style: italic;
+    }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+    /* Base nav links styling */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 25%;
-    left: 47%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    z-index: 1000;
-  }
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
 
-  .nav-links.show {
-    display: flex;
-  }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 25%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
 
-  .nav-links li {
-    margin: 0.1rem 0;
-  }
+      .nav-links.show {
+        display: flex;
+      }
 
-  .nav-links a {
-    display: block;
-    background: #256d85;
-    color: white;
-    text-align: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background 0.2s;
-  }
+      .nav-links li {
+        margin: 0.1rem 0;
+      }
 
-  .nav-links a:hover {
-    background: #1e5a6f;
-  }
-}
+      .nav-links a {
+        display: block;
+        background: #256d85;
+        color: white;
+        text-align: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background 0.2s;
+      }
+
+      .nav-links a:hover {
+        background: #1e5a6f;
+      }
+    }
+
     @media (max-width: 800px) {
       nav ul {
         flex-wrap: wrap;
@@ -446,13 +471,18 @@
       }
 
       .hero h1 {
-        font-size: 3.13rem;
+        font-size: 3.1rem;
       }
 
-      .hero{
+      .hero p {
+        font-size: 1.4rem;
+      }
+
+      .hero {
         height: 85vh;
       }
-      .section-title{
+
+      .section-title {
         font-size: 0.4rem;
       }
     }
@@ -462,31 +492,34 @@
 <body>
   <header>
     <img src="Icon.png" alt="HuMSIRC Logo" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-  <nav>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#Cél">Célunk</a></li>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#Cél">Célunk</a></li>
         <li><a href="#terkep">Térkép</a></li>
         <li><a href="#program">Program</a></li>
         <li><a href="#kerdesek">Kérdések</a></li>
         <li><a href="#tamogatok">Partnerek</a></li>
-    </ul>
-  </nav>
-    <a href="http://www.humsirc.hu/" class="ext-button">Főoldal</a>
+      </ul>
+    </nav>
+    <a href="http://www.humsirc.hu/">
+      <img src="logo.png" alt="HUMSIRC logo" class="logo">
+    </a>
   </header>
 
   <section class="hero">
     <div class="hero-content" style="width: 100%;">
       <img src="Icon.png" alt="HUmsirc Logo" class="hero-logo">
       <div class="title-strip">
-        <h1>Magyar Egészség Piknik</h1>
+        <h1>I. Magyar Egészség Piknik</h1>
+        <p>Szeptember 8. - Bikás Park</p>
       </div>
     </div>
   </section>
 
   <main>
     <section id="Cél">
-      
+
       <img src="goals.png" alt="Mi az a MEP?" width="100%" style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));">
 
 
@@ -507,11 +540,14 @@
       <div class="section-title">
         <h2>Program</h2>
       </div>
-
+      <div class="disclaimer">
+        Az alábbi programok mind a főszínpadon lesznek. Ezekkel párhuzamosan szakmai partnereink workshopokat tartanak,
+        melyek pontos beosztása hamarosan elérhető.
+      </div>
       <table class="schedule">
         <tr>
           <td class="time">8:00</td>
-          <td>Változatos sporttevékenységek</td>
+          <td>Változatos sporttevékenységek - elérhetőek egész nap</td>
         </tr>
         <tr>
           <td class="time">9:30</td>
@@ -519,7 +555,7 @@
         </tr>
         <tr>
           <td class="time">10:00</td>
-          <td>Fenntartható egészségügyi panelbeszélgetés</td>
+          <td>Fenntartható egészségügyi</td>
         </tr>
         <tr>
           <td class="time">11:00</td>
@@ -535,11 +571,11 @@
         </tr>
         <tr>
           <td class="time">14:00</td>
-          <td>A magyar és európai egészségügy HR helyzete - SE EMK</td>
+          <td>A magyar és európai egészségügy HR helyzete</td>
         </tr>
         <tr>
           <td class="time">15:00</td>
-          <td>Gyermekkori Elhízás</td>
+          <td>Gyermekkori elhízás</td>
         </tr>
         <tr>
           <td class="time">16:00</td>
@@ -558,7 +594,7 @@
           <td>Medikus zenekar fellépése</td>
         </tr>
         <tr>
-          <td class="time">19:30</td>
+          <td class="time">19:15</td>
           <td>Moldvai táncház - zenél az Iszka Banda</td>
         </tr>
       </table>
@@ -572,49 +608,33 @@
 
       <div class="faq">
         <details>
-          <summary>Mikor kezdődik az esemény?</summary>
-          <p>Az esemény reggel 8:00-kor kezdődik, a hivatalos megnyitó viszont csak 9:30-kor lesz.</p>
+          <summary>Ingyenesen látogatható az esemény?</summary>
+          <p>Igen, mindenki számára elérhető.</p>
         </details>
 
         <details>
-          <summary>Kell-e belépőjegy?</summary>
-          <p>Nem, az esemény ingyenes.</p>
-        </details>
-
-        <details>
-          <summary>Lesz étel és ital a helyszínen?</summary>
-          <p>Igen, több standnál lehet majd vásárolni.</p>
+          <summary>Vásárolható-e étel és ital a helyszínen?</summary>
+          <p>A bikás park közelében elérhetőek élelmiszer boltok.</p>
         </details>
 
         <details>
           <summary>Hol lesz pontosan a rendezvény?</summary>
-          <p>A budapesti Bikás parkban, azon belűl a kosárlabda pályához közel (fennti térképen látható)</p>
+          <p>A budapesti XI. kerület Bikás parkban, a nagyszínpad a kosárlabda pályán lesz elhelyezve.</p>
         </details>
 
         <details>
-          <summary>Egyszerre több esemény lesz?</summary>
-          <p>Igen, a panelbeszélgetésekkel párhuzamosa, a közel 60 szakmai partnerünk workshopokat rendeznek.</p>
+          <summary>A workshopok a panelbeszélgetésekkel párhuzamosan lesznek megtartva?</summary>
+          <p>Igen, hamarosan publikáljuk a párhuzamos programterveket!</p>
         </details>
       </div>
     </section>
-
-
     <section id="tamogatok">
       <div class="section-title">
-        <h2>Kiemelt szakmai Partnerek</h2>
+        <h2>Kiemelt szakmai partnerek</h2>
       </div>
-      <div style="
-    background-color: rgba(37, 109, 133, 0.1);
-    padding: 10px 15px;
-    margin: 10px 0 20px 0;
-    border-left: 4px solid #256d85;
-    font-size: 20px;
-    color: #333;
-    font-style: italic;
-  ">
-    Szakmai és gazdasági partnereik listája folyamatosan változik, emiatt a szervezők fenntartják a változtatás jogát.
-    Az alábbi partner lista NEM végleges.
-  </div>
+      <div class="disclaimer">
+        Szakmai és gazdasági partnereink listája folyamatosan bővül, a szervezők fenntartják a változtatás jogát.
+      </div>
       <div class="supporter-grid">
         <a href="https://www.bethesda.hu/" class="supporter" title="Bethesda Gyermekkórház">
           <img src="Támogatók/Bethesda.jpg" alt="Bethesda Gyermekkórház">
@@ -669,8 +689,9 @@
     </section>
     <section id="osszes-szakmai-partner">
       <div class="section-title">
-        <h2>Összes szakmai partnerünk</h2>
+        <h2>További szakmai partnereink</h2>
       </div>
+      <!--
       <ol>
         <li><a href="https://www.21no.hu/">21 nő az egészségügyért</a></li>
         <li><a href="https://amigos.hu/">Amigos a gyerekekért Alapítvány</a></li>
@@ -686,8 +707,7 @@
         <li><a href="https://egeszseghid.hu/">Egészség Hídja Összefogás az Egészségért</a></li>
         <li><a href="https://egycseppfigyelem.hu/">Egy Csepp Figyelem Alapítvány</a></li>
         <li><a href="https://eleterzesegyesulet.hu/kapcsolat/">Élet.Érzés</a></li>
-        <li><a href="https://endometriozismagyarorszag.hu/">Endometriózis Magyarország – Női Egészségért Alapítvány</a>
-        </li>
+        <li><a href="https://endometriozismagyarorszag.hu/">Endometriózis Magyarország – Női Egészségért Alapítvány</a></li>
         <li><a href="https://fesz.eu/">Független Egészségügyi Szakszervezet</a></li>
         <li><a href="https://hemokromatozis.hu/">Hemokromatózisos Betegek Egyesülete</a></li>
         <li><a href="https://hungaropharma.hu/">Hungaropharma</a></li>
@@ -731,12 +751,111 @@
         <li><a href="https://vadaskert.hu/">Vadaskert Alapítvány a Gyermekek Lelki Egészségéért</a></li>
         <li><a href="https://gerincferdules.hu/">Vertebra Alapítvány</a></li>
       </ol>
+      -->
+      <div class="supporter-grid">
+        <a href="https://www.21noe.hu/" class="supporter" title="21 nő az egészségügyért">
+          <img src="icons/21no_logo2.png" alt="21 nő az egészségügyért">
+        </a>
+        <a href="https://amigos.hu/" class="supporter" title="Amigos a gyerekekért Alapítvány">
+          <img src="icons/Amigos logo.png" alt="Amigos a gyerekekért Alapítvány">
+        </a>
+        <a href="https://csaszarvonal.hu/" class="supporter" title="Császárvonal">
+          <img src="icons\csаszаrvonal_logo.png" alt="Császárvonal">
+        </a>
+        <a href="https://civilut.hu/" class="supporter" title="Civil út Alapítvány">
+          <img src="icons/logo_civilut_hu.svg" alt="Civil út Alapítvány">
+        </a>
+        <a href="https://egeszsegesnemzet.hu/" class="supporter"
+          title="Az Egészséges Nemzet mindannyiunk közös ügye Alapítvány">
+          <img src="icons/egeszsegnemzet.jpg" alt="Az Egészséges Nemzet mindannyiunk közös ügye Alapítvány">
+        </a>
+        <a href="https://egeszseghidja.hu/" class="supporter" title="Egészség Hídja Összefogás az Egészségért">
+          <img src="icons\31-17_eghidlogo.jpg" alt="Egészség Hídja Összefogás az Egészségért">
+        </a>
+        <a href="https://elet-érzés.hu/" class="supporter" title="Élet.Érzés">
+          <img src="icons/eleterzes.png" alt="Élet.Érzés">
+        </a>
+        <a href="https://endometriosismagyarorszag.hu/" class="supporter"
+          title="Endometriózis Magyarország – Női Egészségért Alapítvány">
+          <img src="icons/NEA_logo_RGB_colour (2).png" alt="Endometriózis Magyarország – Női Egészségért Alapítvány">
+        </a>
+        <a href="https://fesz.hu/" class="supporter" title="Független Egészségügyi Szakszervezet">
+          <img src="icons/FESZ.jpg" alt="Független Egészségügyi Szakszervezet">
+        </a>
+        <a href="https://hbe.hu/" class="supporter" title="Hemokromatózisos Betegek Egyesülete">
+          <img src="icons/HBE_atlatszo.png" alt="Hemokromatózisos Betegek Egyesülete">
+        </a>
+        <a href="https://kiskanal.hu/" class="supporter" title="Kiskanál Kommandó">
+          <img src="icons/kiskanal.png" alt="Kiskanál Kommandó">
+        </a>
+        <a href="https://koraszulo.hu/" class="supporter" title="Koraszülöttekért Országos Egyesület">
+          <img src="icons/KORE.jpg" alt="Koraszülöttekért Országos Egyesület">
+        </a>
+        <a href="https://korhazsuli.hu/" class="supporter" title="KórházSuli Alapítvány">
+          <img src="icons/KS_LOGO_türkiz.png" alt="KórházSuli Alapítvány">
+        </a>
+        <a href="https://gyermekmento.hu/" class="supporter" title="Magyar Gyermekmentő Alapítvány">
+          <img src="icons\mgya logo MGYA  körvonallal.png" alt="Magyar Gyermekmentő Alapítvány">
+        </a>
+        <a href="https://hospice.hu/" class="supporter" title="Magyar Hospice-Palliatív Egyesület">
+          <img src="icons/MHPE logo.jpg" alt="Magyar Hospice-Palliatív Egyesület">
+        </a>
+        <a href="https://pws.hu/" class="supporter" title="Magyar Prader-Willi Szindróma Egyesület">
+          <img src="icons/pws_logo_wo_back.png" alt="Magyar Prader-Willi Szindróma Egyesület">
+        </a>
+        <a href="https://mellrakinfo.hu/" class="supporter" title="Mellrákinfó Egyesület">
+          <img src="icons\mellrakinfo_logo_23_rounded_pink.png" alt="Mellrákinfó Egyesület">
+        </a>
+        <a href="https://mentsmanust.hu/" class="supporter" title="Mentsmanust">
+          <img src="icons/MentsManust albrandek atadas png-02.png" alt="Mentsmanust">
+        </a>
+        <a href="https://merengopodcast.hu/" class="supporter" title="Merengő Podcast">
+          <img src="icons/merengo.jfif" alt="Merengő Podcast">
+        </a>
+        <a href="https://mindart.hu/" class="supporter" title="Mind Art Művészetterápia">
+          <img src="icons\logo_kék.png" alt="Mind Art Művészetterápia">
+        </a>
+        <a href="https://oncoteam.hu/" class="supporter" title="Oncoteam">
+          <img src="icons/1000049786.png" alt="Oncoteam">
+        </a>
+        <a href="https://pirosorr.hu/" class="supporter" title="Piros Orr Bohócdoktorok Alapítvány">
+          <img src="icons/HU-Logo_upright-RGB_2022.jpg" alt="Piros Orr Bohócdoktorok Alapítvány">
+        </a>
+        <a href="https://hatter.hu/" class="supporter" title="Háttér Társaság / Pozitív Szemmel">
+          <img src="icons/hatter-logo-2018.png" alt="Háttér Társaság / Pozitív Szemmel">
+        </a>
+        <a href="https://rirosz.hu/" class="supporter"
+          title="Ritka és Veleszületett Rendellenességgel Élők Országos Szövetsége (RIROSZ)">
+          <img src="icons/Rirosz_logo_transzp.png"
+            alt="Ritka és Veleszületett Rendellenességgel Élők Országos Szövetsége (RIROSZ)">
+        </a>
+        <a href="https://sosleukemia.hu/" class="supporter" title="SOS Leukémia">
+          <img src="icons/sos_leukemia.jpg" alt="SOS Leukémia">
+        </a>
+        <a href="https://szivsn.hu/" class="supporter" title="SzívSN Országos Betegegyesület">
+          <img src="icons/szivlogo.png" alt="SzívSN Országos Betegegyesület">
+        </a>
+        <a href="https://thalassahaz.hu/" class="supporter" title="Thalassa Ház">
+          <img src="icons/thalassa.svg" alt="Thalassa Ház">
+        </a>
+        <a href="https://tudatosgyogyszer.hu/" class="supporter" title="Tudatos Gyógyszerhasználat Egyesület">
+          <img src="icons/tugye-logo.png" alt="Tudatos Gyógyszerhasználat Egyesület">
+        </a>
+        <a href="https://tudoe.hu/" class="supporter" title="Tüdőér Egylet">
+          <img src="icons/Tüdőér Egylet logó.jpg" alt="Tüdőér Egylet">
+        </a>
+      </div>
+
     </section>
     <section id="gazdasagi-partnerek">
       <div class="section-title">
         <h2>Gazdasági partnerek</h2>
       </div>
       <div class="supporter-grid">
+        <a href="https://www.kormany.hu/hu/belugyminiszterium" class="supporter"
+          title="Belügyminisztérium Egészségügyért Felelős Államtitkárság">
+          <img src="Támogatók/Belügy.jpg" alt="Belügyminisztérium">
+        </a>
         <a href="https://hungaropharma.hu/" class="supporter" title="Hungaropharma">
           <img src="Támogatók/phar.jpg" alt="hungaropharma">
         </a>
@@ -762,13 +881,24 @@
           title="Magyar Orvostársaságok és Egyesületek Szövetsége">
           <img src="Támogatók/motesz.jpg" alt="Magyar Orvostársaságok és Egyesületek Szövetsége">
         </a>
+        <a href="https://www.roche.hu/" class="supporter" title="Roche Magyarország"> <img src="icons/roche.png"
+            alt="Roche Magyarország"> </a> <a href="https://osz.hu/hu/" class="supporter"
+          title="Orvostechnikai Szövetség"> <img src="icons/Orvostechnika.jpg" alt="Orvostechnikai Szövetség"> </a> <a
+          href="https://www.biokontroll.hu/" class="supporter" title="Biokontroll Hungária"> <img
+            src="icons/biokontroll.png" alt="Biokontroll Hungária"> </a> <a href="https://dotsdiet.hu/"
+          class="supporter" title="DotsDiet"> <img src="icons/Dots.png" alt="DotsDiet"> </a> <a
+          href="https://szafiwebshop.hu/" class="supporter" title="Szafi webshop"> <img src="icons/SZAFI.png"
+            alt="Szafi webshop"> </a> <a href="https://cornandjoy.com/" class="supporter" title="Corn & Joy"> <img
+            src="icons/cornjoy.jpg" alt="Corn & Joy"> </a> <a href="https://www.mixit.hu/" class="supporter"
+          title="Mixit"> <img src="icons/mixit.png" alt="Mixit"> </a> <a href="https://www.gal.hu/termekek"
+          class="supporter" title="GAL vitamin"> <img src="icons/GAL.png" alt="GAL vitamin"> </a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>Magyar Egészség Piknik © 2025</p>
+    <p>1. Magyar Egészség Piknik © 2025</p>
     <div class="socials">
       <a href="https://www.instagram.com/egeszsegpiknik.humsirc/#">
         <img src="instagram.png" alt="Instagram">
@@ -776,7 +906,7 @@
       <a href="https://www.facebook.com/egeszsegpiknik">
         <img src="facebook.png" alt="Facebook">
       </a>
-      <a href="https://www.linkedin.com/in/eg%C3%A9szs%C3%A9g-piknik-a7b10b379/">
+      <a href="https://www.linkedin.com/in/magyar-eg%C3%A9szs%C3%A9g-piknik-a7b10b379/">
         <img src="linkedin.png" alt="LinkedIn">
       </a>
     </div>
@@ -790,14 +920,14 @@
     }
   });
   const toggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+  const navLinks = document.getElementById('nav-links');
 
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-navLinks.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+  navLinks.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 </script>
 
 </html>
