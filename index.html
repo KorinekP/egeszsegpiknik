@@ -34,7 +34,20 @@
     body::-webkit-scrollbar {
       display: none;
     }
+    .fovednokok {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem; /* távolság a section többi részétől */
+}
 
+.fovednok {
+  flex: 1; /* mindkettő ugyanannyit foglal */
+  text-align: center;
+  padding: 0 1rem; /* kis belső margó */
+  background-color: #f7f7f7; /* opcionális, hogy kiemelje */
+  border-radius: 8px; /* opcionális, szépített sarkok */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* opcionális, enyhe árnyék */
+}
     body::before {
       content: "";
       position: fixed;
@@ -248,26 +261,43 @@
     }
 
     .schedule {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
 
-    .schedule td {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #ddd;
-    }
+.schedule th {
+  background-color: #0077b6;
+  color: #fff;
+  padding: 0.8rem;
+  text-align: left;
+}
 
-    .schedule tr:last-child td {
-      border-bottom: none;
-    }
+.schedule td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
 
-    .schedule td.time {
-      width: 15%;
-      font-family: "Courier New", monospace;
-      font-weight: bold;
-      padding-right: 1rem;
-    }
+.schedule tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.schedule td.time {
+  width: 18%;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+.schedule td.location {
+  width: 25%;
+  font-weight: bold;
+}
+
+.schedule td.program {
+  width: 60%;
+}
 
     .faq {
       font-size: larger;
@@ -488,7 +518,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="Icon.png" alt="HuMSIRC Logo" class="logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
@@ -506,7 +535,6 @@
       <img src="logo.png" alt="HUMSIRC logo" class="logo">
     </a>
   </header>
-
   <section class="hero">
     <div class="hero-content" style="width: 100%;">
       <img src="Icon.svg" alt="HUmsirc Logo" class="hero-logo">
@@ -516,7 +544,6 @@
       </div>
     </div>
   </section>
-
   <main>
     <section id="Cél">
 
@@ -535,7 +562,6 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </section>
-
     <section id="program">
       <div class="section-title">
         <h2>Program</h2>
@@ -544,25 +570,31 @@
         Az alábbi programok mind a főszínpadon zajlanak majd. Ezekkel párhuzamosan szakmai partnereink a sátraiknál workshopokat és különböző foglalkozásokat, aktivitásokat  tartanak, melyek pontos beosztása hamarosan elérhetővé válik.
       </div>
       <table class="schedule">
+        <thead>
+      <tr>
+        <th>Kezdési idő</th>
+        <th>Program a főszínpadon</th>
+      </tr>
+    </thead>
         <tr>
           <td class="time">8:00</td>
-          <td>Változatos sporttevékenységek - elérhetőek egész nap</td>
+          <td>Változatos sporttevékenységek</td>
         </tr>
         <tr>
-          <td class="time">9:30</td>
+          <td class="time">9:00</td>
           <td>Hivatalos megnyitó</td>
         </tr>
         <tr>
           <td class="time">10:00</td>
-          <td>Fenntartható egészségügy</td>
+          <td>Digitalizáció és innováció a magyar egészségügyben</td>
         </tr>
         <tr>
           <td class="time">11:00</td>
-          <td> Fiatalok helye és kérdései az egészségügyben</td>
+          <td>Fiatalok helye és kérdései az egészségügyben</td>
         </tr>
         <tr>
           <td class="time">12:00</td>
-          <td>Digitalizáció és innováció a magyar egészségügyben</td>
+          <td>A magyar és európai egészségügy HR helyzete</td>
         </tr>
         <tr>
           <td class="time">13:00</td>
@@ -570,7 +602,7 @@
         </tr>
         <tr>
           <td class="time">14:00</td>
-          <td>A magyar és európai egészségügy HR helyzete</td>
+          <td>Fenntartható egészségügy panelbeszélgetés</td>
         </tr>
         <tr>
           <td class="time">15:00</td>
@@ -593,12 +625,97 @@
           <td>Medikus zenekar koncertje</td>
         </tr>
         <tr>
-          <td class="time">19:15</td>
+          <td class="time">19:30</td>
           <td>Moldvai táncház - zenél az Iszka Banda</td>
         </tr>
       </table>
     </section>
-
+    <section id="workshops">
+  <div class="section-title">
+    <h2>Workshopok és Szűrések</h2>
+  </div>
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th>Idő</th>
+        <th>Helyszín</th>
+        <th>Program</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <td class="time">09:30 – 10:00</td>
+        <td class="location"></td>
+        <td class="program">Császármetszés utáni regeneráció: bízz újra testedben!</td>
+      </tr>
+      <tr>
+        <td class="time">12:30 – 13:00</td>
+        <td class="location"></td>
+        <td class="program">Nyiroködéma hatékony kezelése – Mire számítsunk nyirokcsomó eltávolítás, sugárkezelés után?</td>
+      </tr>
+      <tr>
+        <td class="time">13:00 – 13:30</td>
+        <td class="location"></td>
+        <td class="program">Terítéken az egészségünk – Hogyan alakítsunk ki egyszerű és egészséges étkezési rendszert?</td>
+      </tr>
+      <tr>
+        <td class="time">14:00 – 15:30</td>
+        <td class="location"></td>
+        <td class="program">Humor workshop – Manyasz Erikával</td>
+      </tr>
+      <tr>
+        <td class="time">14:00 – 16:30</td>
+        <td class="location"></td>
+        <td class="program">Művészetterápiás és art coaching workshop – „Én irányítom a hajómat a stressz tengerén”</td>
+      </tr>
+      <tr>
+        <td class="time">15:00 – 15:30</td>
+        <td class="location"></td>
+        <td class="program">Ülj MELLém! – Mellesleg minden rendben?</td>
+      </tr>
+      <tr>
+        <td class="time">16:00 – 16:30</td>
+        <td class="location"></td>
+        <td class="program">Férfi egészség – A jelenben</td>
+      </tr>
+      <tr>
+        <td class="time">15:45 – 16:45</td>
+        <td class="location"></td>
+        <td class="program">IMPROVment – improvizációs workshop a stresszlevezetés jegyében</td>
+      </tr>
+      <tr>
+        <td class="time">17:00 – 17:30</td>
+        <td class="location"></td>
+        <td class="program">„Én vagyok az, aki…” – interaktív pszichodráma workshop</td>
+      </tr>
+            <tr>
+        <td class="time">08:00 – 14:00</td>
+        <td class="location">SzívSN sátor</td>
+        <td class="program">Vérnyomás és EKG mérés</td>
+      </tr>
+      <tr>
+        <td class="time">10:00 – 18:00</td>
+        <td class="location">Egy Csepp Figyelem Alapítvány sátra</td>
+        <td class="program">Vércukor, vérnyomás, szaturáció mérés</td>
+      </tr>
+      <tr>
+        <td class="time">10:00 – 18:00</td>
+        <td class="location">NNGyK sátra</td>
+        <td class="program">InBody – testösszetétel mérés</td>
+      </tr>
+      <tr>
+        <td class="time">10:00 – 18:00</td>
+        <td class="location">MEMT Sport sátor</td>
+        <td class="program">Mozgásmintázat és sportegészségtan</td>
+      </tr>
+      <tr>
+        <td class="time">14:00 – 20:00</td>
+        <td class="location">Mentsmanust sátor</td>
+        <td class="program">PSA – prosztatarák szűrés</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
     <section id="kerdesek">
       <div class="section-title">
@@ -631,10 +748,18 @@
       <div class="section-title">
         <h2>Kiemelt szakmai partnerek</h2>
       </div>
-      <div class="disclaimer">
-        Partnereink köre folyamatosan bővül és frissül. Az alábbi lista az aktuális állapotot mutatja, nem tekinthető véglegesnek. 
-A programváltoztatás jogát fenntartjuk.
-      </div>
+      <div class="fovednokok">
+    <div class="fovednok">
+      <p><strong>Prof. Dr. Freund Tamás</strong><br>
+      Magyar Tudományos Akadémia elnöke<br>
+      fővédnök</p>
+    </div>
+    <div class="fovednok">
+      <p><strong>Dr. Álmos Péter</strong><br>
+      Magyar Orvosi Kamara elnöke<br>
+      fővédnök</p>
+    </div>
+  </div>
       <div class="supporter-grid">
         <a href="https://www.bethesda.hu/" class="supporter" title="Bethesda Gyermekkórház">
           <img src="Támogatók/Bethesda.jpg" alt="Bethesda Gyermekkórház">
@@ -652,7 +777,7 @@ A programváltoztatás jogát fenntartjuk.
           <img src="Támogatók/háziorvosook.jpg" alt="Háziorvosok Online Szervezete">
         </a>
         <a href="https://okfo.gov.hu/" class="supporter" title="Országos Kórházi Főigazgatóság">
-          <img src="Támogatók/foig.jpg" alt="Országos Kórházi Főigazgatóság">
+          <img src="Támogatók/foig.png" alt="Országos Kórházi Főigazgatóság">
         </a>
         <a href="https://memt.hu/" class="supporter" title="Magyar Egészségügyi Menedzsment Társaság">
           <img src="Támogatók/Hma.jpg" alt="Magyar Egészségügyi Menedzsment Társaság">
@@ -696,6 +821,10 @@ A programváltoztatás jogát fenntartjuk.
     <section id="osszes-szakmai-partner">
       <div class="section-title">
         <h2>További szakmai partnereink</h2>
+      </div>
+      <div class="disclaimer">
+        Partnereink köre folyamatosan bővül és frissül. Az alábbi lista az aktuális állapotot mutatja, nem tekinthető véglegesnek. 
+A programváltoztatás jogát fenntartjuk.
       </div>
       <!--
       <ol>
@@ -864,6 +993,15 @@ A programváltoztatás jogát fenntartjuk.
         <a href="https://www.beres.hu/" class="supporter" title="Béres Gyógyszergyár Zrt.">
           <img src="beres.png" alt="Béres Gyógyszergyár Zrt.">
         </a>
+        <a href="https://dpc.euintezmeny.hu/" class="supporter" title="Dél Pesti Centrumkórház">
+          <img src="dpc.svg" alt="Dél Pesti Centrumkórház">
+        </a>
+        <a href="https://szlmk.hu/" class="supporter" title="Nógrád Vármegyei Szent Lázár Kórház">
+          <img src="szentlazar.png" alt="Nógrád Vármegyei Szent Lázár Kórház">
+        </a>
+        <a href="https://okfo.gov.hu/Hirek/szurobuszok-az-egeszsegpikniken-is" class="supporter" title="OKFO Szűröbusz">
+          <img src="szurobusz.png" alt="OKFO Szűröbusz">
+        </a>
 </div>
 
 
@@ -881,9 +1019,6 @@ A programváltoztatás jogát fenntartjuk.
         -->
         <a href="https://hungaropharma.hu/" class="supporter" title="Hungaropharma">
           <img src="Támogatók/phar.png" alt="hungaropharma">
-        </a>
-        <a href="https://msd.hu/" class="supporter" title="MSD">
-          <img src="Támogatók/msd.jpg" alt="msd">
         </a>
         <a href="https://shop.biotechusa.hu/" class="supporter" title="BioTechUSA">
           <img src="Támogatók/bio.jpg" alt="BioTechUSA">
@@ -925,9 +1060,12 @@ A programváltoztatás jogát fenntartjuk.
         </a>
       </div>
     </section>
+    <div class="disclaimer">
+        KÖZÉRDEKŰ KÖZLEMÉNY: A rendezvény szabadtéren, közterületen kerül megrendezésre, így felhívjuk szíves figyelmüket, hogy a helyszínen fotó- és videófelvételek készülnek. A felvételeket a rendezvény szervezői és partnerei a weboldalukon és közösségi média felületeiken teszik közzé. Amennyiben valaki kéri, hogy ne szerepeljen a felvételeken, jelezze a szervezői csapat felé az egeszsegpiknik@humsirc.hu e-mail címen, és a felvételt nem teszik közzé, vagy kérelemre eltávolítják. 
 
+A rendezvény pártpolitikától mentes, közösségi jellegű. Arra kérjük a résztvevőket, hogy a programhoz illő öltözetet viseljen, és kerülje a politikai jelképeket vagy feliratokat, ezáltal biztosítva a semleges légkört.
+      </div>
   </main>
-
   <footer>
     <p>1. Magyar Egészség Piknik © 2025</p>
     <div class="socials">
