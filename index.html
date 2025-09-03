@@ -427,14 +427,92 @@
       color: #333;
       font-style: italic;
     }
+    #fovednokok {
+  margin: 2rem 0;
+}
 
+.fovednokok-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* egyenkénti kártya */
+.fovednok {
+  flex: 1 1 320px; /* rugalmasság: 2 blokk egy sorban, mobilon törik */
+  max-width: 48%;
+  background: rgba(255,255,255,0.95);
+  padding: 1.1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* név */
+.fovednok strong {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  color: #123; /* opcionális: szín */
+}
+
+/* beosztás és címke */
+.fovednok p {
+  margin: 0 0 0.6rem 0;
+  line-height: 1.3;
+  color: #333;
+}
+
+/* "fővédnök" címke */
+.fovednok .role {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #256d85;
+}
+
+/* supporter ikonok (kicsik, egymás mellett középre rendezve) */
+.fovednok .icons {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.fovednok .icons a {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 6px;
+  transition: transform .15s ease, box-shadow .15s ease;
+  background: rgba(0,0,0,0.03);
+}
+
+.fovednok .icons img {
+  height: 100%;
+  width: auto;
+  display: block;
+  filter: none;
+  margin: auto;
+}
+
+/* hover effekt */
+.fovednok .icons a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
     /* Base nav links styling */
     .nav-links {
       display: flex;
       list-style: none;
       gap: 1rem;
     }
-
     /* Mobile styles */
     @media (max-width: 768px) {
       .menu-toggle {
@@ -643,51 +721,87 @@
       </tr>
     </thead>
     <tbody>
-            <tr>
-        <td class="time">09:30 – 10:00</td>
-        <td class="location"></td>
-        <td class="program">Császármetszés utáni regeneráció: bízz újra testedben!</td>
-      </tr>
       <tr>
-        <td class="time">12:30 – 13:00</td>
-        <td class="location"></td>
-        <td class="program">Nyiroködéma hatékony kezelése – Mire számítsunk nyirokcsomó eltávolítás, sugárkezelés után?</td>
-      </tr>
-      <tr>
-        <td class="time">13:00 – 13:30</td>
-        <td class="location"></td>
-        <td class="program">Terítéken az egészségünk – Hogyan alakítsunk ki egyszerű és egészséges étkezési rendszert?</td>
-      </tr>
-      <tr>
-        <td class="time">14:00 – 15:30</td>
-        <td class="location"></td>
-        <td class="program">Humor workshop – Manyasz Erikával</td>
-      </tr>
-      <tr>
-        <td class="time">14:00 – 16:30</td>
-        <td class="location"></td>
-        <td class="program">Művészetterápiás és art coaching workshop – „Én irányítom a hajómat a stressz tengerén”</td>
-      </tr>
-      <tr>
-        <td class="time">15:00 – 15:30</td>
-        <td class="location"></td>
-        <td class="program">Ülj MELLém! – Mellesleg minden rendben?</td>
-      </tr>
-      <tr>
-        <td class="time">16:00 – 16:30</td>
-        <td class="location"></td>
-        <td class="program">Férfi egészség – A jelenben</td>
-      </tr>
-      <tr>
-        <td class="time">15:45 – 16:45</td>
-        <td class="location"></td>
-        <td class="program">IMPROVment – improvizációs workshop a stresszlevezetés jegyében</td>
-      </tr>
-      <tr>
-        <td class="time">17:00 – 17:30</td>
-        <td class="location"></td>
-        <td class="program">„Én vagyok az, aki…” – interaktív pszichodráma workshop</td>
-      </tr>
+  <td class="time">09:30 – 10:00</td>
+  <td class="location"></td>
+  <td class="program">Császármetszés utáni regeneráció: bízz újra testedben!</td>
+</tr>
+<tr>
+  <td class="time">09:45 – 10:15</td>
+  <td class="location"></td>
+  <td class="program">Tudatos gyógyszerhasználat a mindennapokban</td>
+</tr>
+<tr>
+  <td class="time">10:00 – 10:30</td>
+  <td class="location"></td>
+  <td class="program">Tabuk nélkül a HPV-ről</td>
+</tr>
+<tr>
+  <td class="time">10:30 – 11:00</td>
+  <td class="location"></td>
+  <td class="program">Szerhasználat és felépülés</td>
+</tr>
+<tr>
+  <td class="time">11:00 – 11:30</td>
+  <td class="location"></td>
+  <td class="program">Érzelem-szabályozás?</td>
+</tr>
+<tr>
+  <td class="time">12:30 – 13:00</td>
+  <td class="location"></td>
+  <td class="program">Nyiroködéma hatékony kezelése – Mire számítsunk nyirokcsomó eltávolítás, sugárkezelés után?</td>
+</tr>
+<tr>
+  <td class="time">13:00 – 13:30</td>
+  <td class="location"></td>
+  <td class="program">Terítéken az egészségünk – Hogyan alakítsunk ki egyszerű és egészséges étkezési rendszert?</td>
+</tr>
+<tr>
+  <td class="time">13:00 – 13:30</td>
+  <td class="location"></td>
+  <td class="program">Hogyan segítheti a lézerfizika és az adattudomány a megelőző orvoslást?</td>
+</tr>
+<tr>
+  <td class="time">14:00 – 15:30</td>
+  <td class="location"></td>
+  <td class="program">Humor workshop – Manyasz Erikával</td>
+</tr>
+<tr>
+  <td class="time">14:00 – 16:30</td>
+  <td class="location"></td>
+  <td class="program">Művészetterápiás és art coaching workshop – „Én irányítom a hajómat a stressz tengerén”</td>
+</tr>
+<tr>
+  <td class="time">14:30 – 15:00</td>
+  <td class="location"></td>
+  <td class="program">Kérdések, amik sebeznek – válaszok, amik közelebb hoznak</td>
+</tr>
+<tr>
+  <td class="time">15:00 – 15:30</td>
+  <td class="location"></td>
+  <td class="program">Ülj MELLém! – Mellesleg minden rendben?</td>
+</tr>
+<tr>
+  <td class="time">15:30 – 16:00</td>
+  <td class="location"></td>
+  <td class="program">Kórházból suliba</td>
+</tr>
+<tr>
+  <td class="time">15:45 – 16:45</td>
+  <td class="location"></td>
+  <td class="program">IMPROVment – improvizációs workshop a stresszlevezetés jegyében</td>
+</tr>
+<tr>
+  <td class="time">16:00 – 16:30</td>
+  <td class="location"></td>
+  <td class="program">Férfi Egészség – A Jelenben</td>
+</tr>
+<tr>
+  <td class="time">17:00 – 18:00</td>
+  <td class="location"></td>
+  <td class="program">A Kör- improvizációs pszichoonkológia workshop</td>
+</tr>
+
             <tr>
         <td class="time">08:00 – 14:00</td>
         <td class="location">SzívSN sátor</td>
@@ -705,8 +819,8 @@
       </tr>
       <tr>
         <td class="time">10:00 – 18:00</td>
-        <td class="location">MEMT Sport sátor</td>
-        <td class="program">Mozgásmintázat és sportegészségtan</td>
+        <td class="location">Magyar Dermatológusok Egyesületének sátra</td>
+        <td class="program">Melanoma szűrés</td>
       </tr>
       <tr>
         <td class="time">14:00 – 20:00</td>
@@ -716,7 +830,6 @@
     </tbody>
   </table>
 </section>
-
     <section id="kerdesek">
       <div class="section-title">
         <h2>Gyakori kérdések</h2>
@@ -744,32 +857,55 @@
         </details>
       </div>
     </section>
+    <section id="fovednokok">
+  <div class="section-title">
+    <h2>Fővédnökök</h2>
+  </div>
+
+  <div class="fovednokok-wrapper">
+    <div class="fovednok">
+      <p>
+        <strong>Prof. Dr. Freund Tamás</strong>
+        Magyar Tudományos Akadémia elnöke
+      </p>
+      <div class="role">Fővédnök</div>
+
+      <div class="icons">
+        <a href="https://mta.hu/" class="supporter" title="Magyar Tudományos Akadémia" target="_blank" rel="noopener">
+          <img src="Támogatók/mta.jpg" alt="Magyar Tudományos Akadémia">
+        </a>
+      </div>
+    </div>
+
+    <div class="fovednok">
+      <p>
+        <strong>Dr. Álmos Péter</strong>
+        Magyar Orvosi Kamara elnöke
+      </p>
+      <div class="role">Fővédnök</div>
+
+      <div class="icons">
+        <a href="https://mok.hu/" class="supporter" title="Magyar Orvosi Kamara" target="_blank" rel="noopener">
+          <img src="Támogatók/kamara.jpg" alt="Magyar Orvosi Kamara">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
     <section id="tamogatok">
       <div class="section-title">
         <h2>Kiemelt szakmai partnerek</h2>
       </div>
-      <div class="fovednokok">
-    <div class="fovednok">
-      <p><strong>Prof. Dr. Freund Tamás</strong><br>
-      Magyar Tudományos Akadémia elnöke<br>
-      fővédnök</p>
-    </div>
-    <div class="fovednok">
-      <p><strong>Dr. Álmos Péter</strong><br>
-      Magyar Orvosi Kamara elnöke<br>
-      fővédnök</p>
-    </div>
-  </div>
+      
+    
       <div class="supporter-grid">
         <a href="https://www.bethesda.hu/" class="supporter" title="Bethesda Gyermekkórház">
           <img src="Támogatók/Bethesda.jpg" alt="Bethesda Gyermekkórház">
         </a>
-        <!--
         <a href="https://www.kormany.hu/hu/belugyminiszterium" class="supporter"
           title="Belügyminisztérium Egészségügyért Felelős Államtitkárság">
-          <img src="Támogatók/Belügy.jpg" alt="Belügyminisztérium">
+          <img src="Támogatók/Belügy.png" alt="Belügyminisztérium">
         </a>
-        -->
         <a href="https://www.hgye.hu/info.aspx?sp=1" class="supporter" title="Házi Gyermekorvosok Egyesülete">
           <img src="Támogatók/gyermekorvosok.jpg" alt="Házi Gyermekorvosok Egyesülete">
         </a>
@@ -786,7 +922,7 @@
           <img src="Támogatók/kamara.jpg" alt="Magyar Orvosi Kamara">
         </a>
         <a href="https://magyarorvosok.hu/" class="supporter" title="Magyar Orvosok Szakszervezet">
-          <img src="Támogatók/mosz.jpg" alt="Magyar Orvosok Szakszervezet">
+          <img src="Támogatók/mosz.png" alt="Magyar Orvosok Szakszervezet">
         </a>
         <a href="https://www.motesz.hu/" class="supporter" title="Magyar Orvostársaságok és Egyesületek Szövetsége">
           <img src="Támogatók/motesz.jpg" alt="Magyar Orvostársaságok és Egyesületek Szövetsége">
@@ -997,7 +1133,7 @@ A programváltoztatás jogát fenntartjuk.
           <img src="dpc.svg" alt="Dél Pesti Centrumkórház">
         </a>
         <a href="https://szlmk.hu/" class="supporter" title="Nógrád Vármegyei Szent Lázár Kórház">
-          <img src="Szentlazar.png" alt="Nógrád Vármegyei Szent Lázár Kórház">
+          <img src="szentlazar.png" alt="Nógrád Vármegyei Szent Lázár Kórház">
         </a>
         <a href="https://okfo.gov.hu/Hirek/szurobuszok-az-egeszsegpikniken-is" class="supporter" title="OKFO Szűröbusz">
           <img src="szurobusz.png" alt="OKFO Szűröbusz">
@@ -1011,23 +1147,24 @@ A programváltoztatás jogát fenntartjuk.
         <h2>Támogató partnereink</h2>
       </div>
       <div class="supporter-grid">
-        <!--
+        <a href="https://mok.hu/" class="supporter" title="Magyar Orvosi Kamara">
+          <img src="Támogatók/kamara.jpg" alt="Magyar Orvosi Kamara">
+        </a>
         <a href="https://www.kormany.hu/hu/belugyminiszterium" class="supporter"
           title="Belügyminisztérium Egészségügyért Felelős Államtitkárság">
-          <img src="Támogatók/Belügy.jpg" alt="Belügyminisztérium">
+          <img src="Támogatók/Belügy.png" alt="Belügyminisztérium">
         </a>
-        -->
         <a href="https://hungaropharma.hu/" class="supporter" title="Hungaropharma">
           <img src="Támogatók/phar.png" alt="hungaropharma">
         </a>
         <a href="https://shop.biotechusa.hu/" class="supporter" title="BioTechUSA">
-          <img src="Támogatók/bio.jpg" alt="BioTechUSA">
+          <img src="Támogatók/Biotech.png" alt="BioTechUSA">
         </a>
         <a href="https://magyarorvosok.hu/" class="supporter" title="Magyar Orvosok Szakszervezete">
-          <img src="Támogatók/mosz.jpg" alt="Magyar Orvosok Szakszervezete">
+          <img src="Támogatók/mosz.png" alt="Magyar Orvosok Szakszervezete">
         </a>
         <a href="https://www.gedeonrichter.com/hu-hu" class="supporter" title="Richter Gedeon Nyrt.">
-          <img src="Támogatók/rich.jpg" alt="Richter Gedeon">
+          <img src="Támogatók/rich.png" alt="Richter Gedeon">
         </a>
         <a href="https://www.mbhep.hu/" class="supporter" title="MBH Gondoskodás Egészségpénztár">
           <img src="Támogatók/mbh_eg.png" alt="MBH Gondoskodás Egészségpénztár">
@@ -1047,17 +1184,33 @@ A programváltoztatás jogát fenntartjuk.
             alt="Roche Magyarország"> </a> <a href="https://osz.hu/hu/" class="supporter"
           title="Orvostechnikai Szövetség"> <img src="icons/Orvostechnika.jpg" alt="Orvostechnikai Szövetség"> </a> <a
           href="https://www.biokontroll.hu/" class="supporter" title="Biokontroll Hungária"> <img
-            src="icons/biokontroll.png" alt="Biokontroll Hungária"> </a> <a href="https://dotsdiet.hu/"
+            src="Támogatók/biokontroll.png" alt="Biokontroll Hungária"> </a> <a href="https://dotsdiet.hu/"
           class="supporter" title="DotsDiet"> <img src="icons/Dots.png" alt="DotsDiet"> </a> <a
           href="https://szafiwebshop.hu/" class="supporter" title="Szafi webshop"> <img src="icons/SZAFI.png"
             alt="Szafi webshop"> </a> <a href="https://cornandjoy.com/" class="supporter" title="Corn & Joy"> <img
             src="icons/cornjoy.jpg" alt="Corn & Joy"> </a> <a href="https://www.mixit.hu/" class="supporter"
           title="Mixit"> <img src="icons/mixit.png" alt="Mixit"> </a> <a href="https://www.gal.hu/termekek"
-          class="supporter" title="GAL vitamin"> <img src="icons/GAL.png" alt="GAL vitamin"> </a>
+          class="supporter" title="GAL vitamin"> <img src="Támogatók/GAL.png" alt="GAL vitamin"> </a>
           <a href="https://www.milotaiasvanyviz.hu/" class="supporter"
           title="Milotai ásványvíz">
           <img src="milotai.png" alt="Milotai ásványvíz">
         </a>
+        <a href="https://tomandiet.com/" class="supporter" title="Fehérjediéta minőségi termékekkel - Toman Lifestyle">
+  <img src="Támogatók/Toman.png" alt="Fehérjediéta minőségi termékekkel - Toman Lifestyle">
+</a>
+<a href="https://diakhitel.hu/" class="supporter" title="Diákhitel">
+  <img src="Támogatók/DH.png" alt="Diákhitel">
+</a>
+<a href="https://www.hartmann.info/hu-hu/" class="supporter" title="HARTMANN | Segít. Gondoskodik. Véd.">
+  <img src="Támogatók/hart.png" alt="HARTMANN | Segít. Gondoskodik. Véd.">
+</a>
+<a href="https://budapest.plazmaadas.hu/" class="supporter" title="Plazma Pont Budapest">
+  <img src="Támogatók/Plazma.png" alt="Plazma Pont Budapest">
+</a>
+<a href="https://swisslaboratory.com/en/" class="supporter" title="Díjnyertes vitaminitalok svájci gyógynövényekkel, SWISS">
+  <img src="Támogatók/Swiss.png" alt="Díjnyertes vitaminitalok svájci gyógynövényekkel, SWISS">
+</a>
+
       </div>
     </section>
     <div class="disclaimer">
@@ -1118,7 +1271,6 @@ A rendezvény pártpolitikától mentes, közösségi jellegű. Arra kérjük a 
 
 
 </html>
-
 
 
 
