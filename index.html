@@ -155,7 +155,7 @@
     }
 
     .title-strip {
-      width: 100vw;
+      width: 100%;
       background-color: #f04f58;
       padding: 1.5rem 0;
       box-sizing: border-box;
@@ -441,7 +441,7 @@
 /* egyenkénti kártya */
 .fovednok {
   flex: 1 1 320px; /* rugalmasság: 2 blokk egy sorban, mobilon törik */
-  width: 48%;
+  width: 45%;
   background: rgba(255,255,255,0.95);
   padding: 1.1rem;
   box-sizing: border-box;
@@ -523,11 +523,10 @@
       gap: 1rem;
     }
     /* Mobile styles */
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
       .menu-toggle {
         display: block;
       }
-
       .nav-links {
         display: none;
         position: fixed;
@@ -1361,8 +1360,6 @@ document.querySelectorAll('.program').forEach(cell => {
 });
 </script>
 </html>
-
-
 
 
 
