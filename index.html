@@ -14,7 +14,7 @@
       font-weight: normal;
       font-style: normal;
     }
-
+    * {max-width: 100vw;}
     * {
       margin: 0;
       padding: 0;
@@ -572,6 +572,23 @@
         flex-wrap: wrap;
         gap: 0.5rem;
       }
+        .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  }
+
+  .schedule {
+    width: 100%;
+    table-layout: auto; /* allow flexible column widths */
+  }
+
+  .schedule td.time,
+  .schedule td.location,
+  .schedule td.program {
+    width: auto; /* let columns shrink naturally */
+    white-space: normal; /* allow wrapping */
+  }
+
       .fovednok{
         width: 70%;
       }
@@ -656,6 +673,7 @@
       <div class="section-title">
         <h2>Program</h2>
       </div>
+      <div class="table-wrapper">
       <table class="schedule">
         <thead>
       <tr>
@@ -716,11 +734,13 @@
           <td>Moldvai táncház - zenél az Iszka Banda</td>
         </tr>
       </table>
+      </div>
     </section>
     <section id="workshops">
   <div class="section-title">
     <h2>Workshopok és Szűrések</h2>
   </div>
+  <div class="table-wrapper">
   <table class="schedule">
     <tbody>
       </tr>
@@ -907,6 +927,7 @@ Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
     <section id="kerdesek">
       <div class="section-title">
@@ -935,7 +956,6 @@ Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és
         </details>
       </div>
     </section>
-    <!--
     <section id="fovednokok">
   <div class="section-title">
     <h2>Fővédnökök</h2>
@@ -970,7 +990,6 @@ Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és
       </div>
     </div>
   </div>
-    -->
 </section>
     <section id="tamogatok">
       <div class="section-title">
@@ -1362,8 +1381,6 @@ document.querySelectorAll('.program').forEach(cell => {
 });
 </script>
 </html>
-
-
 
 
 
