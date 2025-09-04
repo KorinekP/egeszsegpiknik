@@ -120,7 +120,6 @@
       cursor: pointer;
       text-decoration: none;
     }
-
     .hero {
       height: 95vh;
       display: flex;
@@ -442,7 +441,7 @@
 /* egyenkénti kártya */
 .fovednok {
   flex: 1 1 320px; /* rugalmasság: 2 blokk egy sorban, mobilon törik */
-  max-width: 48%;
+  width: 48%;
   background: rgba(255,255,255,0.95);
   padding: 1.1rem;
   box-sizing: border-box;
@@ -501,7 +500,17 @@
   filter: none;
   margin: auto;
 }
-
+.schedule td.separator {
+  background-color: #2b4865;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;     /* vízszintes közép */
+  border-bottom: none;    /* ne legyen elválasztó vonal */
+  height: 70px;           /* fix magasság */
+  line-height: 70px;      /* függőleges közép egysoros szövegnél */
+  padding: 0;             /* a line-height miatt nincs szükség rá */
+}
 /* hover effekt */
 .fovednok .icons a:hover {
   transform: translateY(-4px);
@@ -564,7 +573,9 @@
         flex-wrap: wrap;
         gap: 0.5rem;
       }
-
+      .fovednok{
+        width: 100%;
+      }
       nav a {
         font-size: 0.9rem;
       }
@@ -633,11 +644,13 @@
       <div class="section-title">
         <h2>Helyszín: Budapest Bikás park</h2>
       </div>
-
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.2635218073!2d19.030618568121675!3d47.465293992315495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ddbf35583c7d%3A0x5424feb504b93d8c!2sBik%C3%A1s%20Park%20Streetball%20Court!5e0!3m2!1shu!2shu!4v1754481639826!5m2!1shu!2shu"
         width="100%" height="600px" style="border:10px solid rgb(0, 0, 0);" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a href="terkep.svg" target="_blank">
+  <img src="terkep.svg" width="100%">
+</a>
 
     </section>
     <section id="program">
@@ -710,39 +723,45 @@
     <h2>Workshopok és Szűrések</h2>
   </div>
   <table class="schedule">
-    <thead>
-      <tr>
-        <th>Idő</th>
-        <th>Sátor</th>
-        <th>Program</th>
-      </tr>
-    </thead>
     <tbody>
+      </tr>
+<td colspan="3" class="separator">Délelőtti workshopok</td>
+            <tr>
       <tr>
   <td class="time">09:30 – 10:00</td>
   <td class="location">Császárvonal</td>
   <td class="program">Császármetszés utáni regeneráció: bízz újra testedben!</td>
 </tr>
+<tr class="description-row" style="display:none;">
+  <td colspan="3">Beszélgessünk arról, hogy a nagy hasi műtét után miképp nyerheti vissza egy édesanya erőnlétét, miképp “huzalozhatja” újra testét a több réteg átvágásával járó hasi szülés után. Mit jelent a holisztikus, ún. hegtudatos megközelítés a szülés/műtét utáni regenerációban? Hogy jön a szüléstörténet a képbe? Miért is lenne fontos minden császárral szült édesanyának megtanulnia a hegmasszázst, a heg gyógyulását segítő életmódbeli lépéseket, az egész testet regeneráló tornákat, illetve hegtudatossá válni élethosszig? Mi köze lehet a szülésünkhöz való viszonyunknak hegünk, hasunk, testünk állapotához? Szeretnénk a tévhiteket eloszlatni, és minden császármetszés után lévő hölgynek visszaadni a tudást, hogy bízzon újra a testében.</td>
+    </tr>
 <tr>
   <td class="time">09:45 – 10:15</td>
   <td class="location">Tudatos gyógyszerhasználat</td>
   <td class="program">Tudatos gyógyszerhasználat a mindennapokban</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Kvíz Tanácsok tippek a tudatos házipatika kialakításához. Gyógyszeres lista, QR kód matrica házipatika átnézésére.</td>
+    </tr>
 <tr>
   <td class="time">10:00 – 10:30</td>
   <td class="location">Mályvavirág</td>
   <td class="program">Tabuk nélkül a HPV-ről</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Hogyan beszéljünk a párunkkal vagy barátainkkal olyan dolgokról, amelyektől mi magunk is zavarban vagyunk? Miért kelt bennünk félelmet vagy szégyent egy orvosi diagnózis? A workshop során rövid gyakorlatokon keresztül vizsgáljuk, hogyan alakítják viselkedésünket a társas normák, és miért félünk a „kényes” témáktól, valamint hogyan lehet ezekről nyíltan beszélni családban, párkapcsolatban vagy baráti körben.</td>
+    </tr>
 <tr>
   <td class="time">10:30 – 11:00</td>
   <td class="location">Megálló csoport Alapítvány</td>
   <td class="program">Szerhasználat és felépülés</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Interaktív beszélgetés a szerhasználatról és a felépülésről. Kinek mi a szere? Alkohol? Drog? Viselkedés? Segítségkérési lehetőségek</tr>
 <tr>
   <td class="time">10:30 – 11:30</td>
   <td class="location">Újbuda Gyermek Fejlesztőház</td>
   <td class="program">
-
 Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és kisgyermek lábvizsgálat</td>
 </tr>
 <tr>
@@ -750,61 +769,97 @@ Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és
   <td class="location">Merengő Podcast</td>
   <td class="program">Érzelem-szabályozás?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Szeretnél jobban rálátni a saját érzéseidre, és megtanulni hatékonyabban szabályozni őket?A Merengő “Érzelem-szabályozás?” workshop lehetőséget ad arra, hogy játékos és élményszerű gyakorlatokon keresztül foglalkozz az aktuális érzelmi állapotoddal, és kipróbálj olyan érzelemszabályozási feladatokat, amelyek a mindennapokban is segíthetnek.Mire számíthatsz?Biztonságos tér, ahol szabadon kifejezheted magadCsoportos és egyéni élményekGyere el, ha szeretnél önismereti feladatokat kipróbálni és új eszközöket kapni az érzelmeid tudatosabb kezeléséhez!<tr>
+<tr>
+  <td colspan="3" class="separator">Délutáni workshopok</td>
+</tr>
 <tr>
   <td class="time">12:30 – 13:00</td>
   <td class="location">Egészség Hídja Összefogás az Egészségért</td>
   <td class="program">Nyiroködéma hatékony kezelése – Mire számítsunk nyirokcsomó eltávolítás, sugárkezelés után?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Emlőműtötteket érinthető szövődmény, a nem ritkán előfordulható nyiroködéma kezelési lehetősége lenne, gyakorlati bemutatóval<tr>
 <tr>
   <td class="time">13:00 – 13:30</td>
   <td class="location">Az Egészséges Nemzet mindannyiunk közös ügye Alapítvány</td>
   <td class="program">Terítéken az egészségünk – Hogyan alakítsunk ki egyszerű és egészséges étkezési rendszert?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Diéták helyett hosszú távon működő, élvezetes étkezés: amely nemcsak egészségesen tart bennünket, hanem örömöt is visz a mindennapokba. Ki ne vágyna erre? Mégis azt látjuk, hogy a hétköznapi rohanásban sokszor nehéz valóban beépíteni az egészséges szokásokat. A „Terítéken az egészségünk” című interaktív workshop éppen ezért a táplálkozás legegyszerűbb, azonnal megvalósítható alapjait mutatja be, lebontva a diéták körüli mítoszokat. A résztvevők könnyen követhető irányelveket és azonnal alkalmazható ötleteket kapnak a tudatos táplálkozás első lépéseihez, legyen szó bevásárlásról, főzésről vagy napi rutinról. Az előadás kézzelfogható támpontot adhat ahhoz, hogy étrendünk friss, változatos és hosszú távon fenntartható legyen.<tr>
+<tr>
 <tr>
   <td class="time">13:00 – 13:30</td>
   <td class="location">CMF – Center for Molecular Fingerprinting </td>
   <td class="program">Hogyan segítheti a lézerfizika és az adattudomány a megelőző orvoslást?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">A Center for Molecular Fingerprinting egy különböző tudományterületeket egyesítő kutatóközpont. A Nobel-díjas dr. Krausz Ferenc által vezetett projekt célja egy olyan új diagnosztikai eszköz kifejlesztése, amellyel bizonyos betegségek a molekulák szintjén még a tünetek megjelenése előtt diagnosztizálhatók. A többek között orvosokból, lézerfizikusokból, molekuláris biológusokból és adattudósokból álló nemzetközi csapatot egy közös cél vezérli: az egészségügy jövőjének átformálása. A központ cégvezetője, dr. Vastag László Sándor szemléletes prezentáció keretében mutatja be a kutatás célját, eddig elért részeredményeit, valamint azt is, hogyan tud bárki hozzájárulni a projekt sikeréhez azzal, ha csatlakozik a kutatáshoz a H4H Programon keresztül.<tr>
+<tr>
 <tr>
   <td class="time">13:30 – 14:15</td>
   <td class="location">Űrorvoslás</td>
   <td class="program">Mi is az az űrorvoslás?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Program célja, hogy közösen beszélgessünk az űrorvoslásról és az űrutazás egészségügyi hatásairól.<tr>
+<tr>
 <tr>
   <td class="time">14:00 – 15:30</td>
   <td class="location">Piros Orr Bohócdoktorok Alapítvány</td>
   <td class="program">Humor workshop – Manyasz Erikával</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Ki ne szeretne lazítani, kiengedni a gőzt, felszabadultan nevetni, kapcsolódni másokhoz és saját magához, egy kicsit odakint felejteni a külvilágot, rövid időre gyerekként játszani újra, örülni a sikernek, de ünnepelni a hibát is? Ezzel a workshoppal mindezekre szeretnénk lehetőséget teremteni a résztvevőknek közös játékokon keresztül. Szóval: „Akarsz-e játszani?” Ha igen, itt a helyed!A humor minden életkorban fontos része az életünknek. Oldja a feszültséget, a szorongást, segíti elfogadást és kapcsolatot teremt egymás között. A PIROS ORR Bohócdoktorok munkájuk során ez a szupererőt használják, hogy mentális támogatást adjanak azoknak, akik nehéz helyzetben vannak. A workshop során megismerhetitek a bohócdoktor szakma hátterét, a bohóc játékosságát, az elfogadás erejét és a bohócdoktori munka hatásmechanizmusát. Kiderül, mit adhat nekünk az elfogadás és a nyitottság. Megtapasztaljuk, hogy a játékosság minden élethelyzetben segít, hogy önmagunk maradhassunk. Hogy a félelmeinkkel szemben nem a megküzdés a legcélravezetőbb, sokkal inkább a nézőpontváltás és az izoláció megszűntetése.A programon való részvétel limitált, maximum 25 fő, ezért kérjük, hogy jelentkezésedet a bohocdoktorok@pirosorr.hu email címre küldd el!<tr>
+<tr>
 <tr>
   <td class="time">14:00 – 16:30</td>
   <td class="location">Mind Art</td>
   <td class="program">Művészetterápiás és art coaching workshop – „Én irányítom a hajómat a stressz tengerén”</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">A stressz a mindennapjaink része – elkerülni nem tudjuk, de nem mindegy, hogyan viszonyulunk hozzá. A Mind Art kreatív önismereti workshopján egy nyugalmas piknik hangulatú környezetben próbálhatod ki,  hogyan segíthetnek a kreatív eszközök a stresszel való megküzdésben és a nyugalom megteremtésében. Az egyórás workshop során a különböző gyakorlatokon és alkotáson keresztül nemcsak a kreatív kikapcsolódásra, hanem az önismereted mélyítésére is. lehetőséged nyílik. Foglalkozunk azzal, hogyan éljük meg a stresszt, milyen erőforrásaink segíthetnek a nehéz helyzetekben, végül pedig megalkotjuk a saját „nyugalom szigetünket” is.<tr>
+<tr>
 <tr>
   <td class="time">14:30 – 15:00</td>
   <td class="location">Élet.Érzés</td>
   <td class="program">Kérdések, amik sebeznek – válaszok, amik közelebb hoznak</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Mindannyiunk életében elhangzanak olyan mondatok, amelyek ítélkezve vagy kíváncsiságba burkolva találnak szíven: „Miért nincs gyereked?”, „Miért van öt gyereked?”, „Nem félsz, hogy…?”. Ezek sokszor ártalmatlannak tűnnek, mégis mélyen sebezhetnek.Ebben a félórás közös beszélgetésben arról lesz szó, hogyan hatnak ránk ezek a mondatok, és mi történik akkor, ha ítélkezés helyett megértéssel, kíváncsiság helyett együttérzéssel fordulunk egymás felé. Egy kis idő, amikor megtanulhatjuk más szemmel látni egymást – és közben talán magunkra is rátalálunk.<tr>
+<tr>
 <tr>
   <td class="time">15:00 – 15:30</td>
   <td class="location">Mellrákinfó Egyesület</td>
   <td class="program">Ülj MELLém! – Mellesleg minden rendben?</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3"> Szeretettel várunk mindenkit különleges, tabudöntögető workshopunkra, ahol közösen beszélgetünk a mellrákról – őszintén, közérthetően és interaktívan.Az esemény első részében röviden bemutatjuk egyesületünket, majd egy játékos Mellrák-totó segítségével tesztelheted tudásodat. A kérdésekre adott válaszokat együtt átbeszéljük, hogy eloszlassunk minden tévhitet, és tisztábban lássunk a szűrővizsgálatok és a felismerés fontosságáról.Ezután gyakorlati rész következik: egy mell-mulázson megmutatjuk az önvizsgálat helyes módját, ahol te is kipróbálhatod, milyen érzés, amikor „található valami” a mellben. Ez biztonságos és szemléletes módja annak, hogy magabiztosabbá válj a saját tested ismeretében.A program végén természetesen lesz lehetőség kérdezni, beszélgetni, és megosztani a tapasztalatokat.Gyere el, ülj MELLénk – hiszen a tudás és az odafigyelés életeket menthet!<tr>
+<tr>
 <tr>
   <td class="time">15:30 – 16:00</td>
   <td class="location">Kórházsuli</td>
   <td class="program">Kórházból suliba</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Miért fontos a betegség alatt is a tanulás? Miért egyetemisták az önkénteseink? Hogyan segítjük a pedagógusokat, ha beteg gyermek van az osztályukba? Mik azok az erőforrások amiket egy nehéz helyzetben használhatunk? Ezekről a kérdésekről beszélgethetünk 09.06-án 15:30-tól a KórházSuli sátornál.<tr>
+<tr>
 <tr>
   <td class="time">15:45 – 16:45</td>
   <td class="location">IMPROVment</td>
   <td class="program">IMPROVment – improvizációs workshop a stresszlevezetés jegyében</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Élmény-alapú társasági, és egyszerű improvizációs játékokkal várjuk az érdeklődőket. Ehhez semmilyen improvizációs, vagy egyéb ismeret nem szükséges, csak TE! Néhány rövid bemelegítő játék után egy történetet ott helyben improvizálni. Vigyázat! Szituációs humorra és sok nevetésre kell számítani!<tr>
+<tr>
 <tr>
   <td class="time">16:00 – 16:30</td>
   <td class="location">Mentsmanust</td>
   <td class="program">Férfi Egészség – A Jelenben</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Egy interaktív workshoppal készülünk melynek célja, hogy a testtudatot, a jelenlétet és az egészségmegőrzés fontosságát tudatosítsa a résztvevőkben. A workshopban lesz testorientált gyakorlat, légzés, mindfulness és egyéb olyan eszközök, melyek támogatják a férfiakat a mindennapi kihívásaikban.<tr>
 <tr>
         <td class="time">16:00 – 17:00</td>
         <td class="location">Újbuda Gyermek FejlesztőHáz</td>
@@ -815,11 +870,17 @@ Milyen a jó cipő gyermekemnek? – beszélgetés a korosztályi cipőkről és
   <td class="location">Oncoteam</td>
   <td class="program">A Kör- improvizációs pszichoonkológia workshop</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">A „How to: Orvosi” workshop azoknak szól, akik most készülnek belevágni az orvosi vagy más egészségtudományi egyetemi éveikbe, vagy épp még csak tervezgetik, hogy ezt az utat választják. Az orvosira kerülni egyszerre hatalmas lehetőség és nagy kihívás: új barátok, izgalmas gyakorlatok, de közben sok bizonytalanság is. Felmerülhet, hogy mit érdemes beszerezni az órák előtt, mire kell figyelni az első hetekben, vagy hogy valóban nagy hibát jelent-e egy év halasztás.A workshop során ezekre a kérdésekre keressük a választ. Személyes tapasztalatok és történetek segítségével szeretném megmutatni, hogyan lehet tudatosabban és felkészültebben belevágni az egyetemi évekbe, és közben eloszlatni néhány gyakori tévhitet is.A programot középiskolásoknak, szülőknek, valamint azoknak is ajánlom, akik most terveznek szakmát váltani, és bármelyik egészségtudományi egyetem felé érdeklődnek. A cél, hogy minden résztvevő nyugodtabban, magabiztosabban indulhasson neki az előtte álló időszaknak.<tr>
+<tr>
 <tr>
   <td class="time">17:15 – 17:45</td>
   <td class="location">Medikus infó</td>
   <td class="program">How to: orvosi</td>
 </tr>
+<tr class="description-row" style="display:none;">
+      <td colspan="3">Merülj el egy különleges improvizációs játékban, ahol a résztvevők valódi emberi sorsokba és érzelmekbe léphetnek bele. A workshop célja, hogy kreatívan és játékosan mutassa meg az onkológiai betegek érzelmi sokszínűségét – a humortól a dühön át a reményig. Olyan nyitott, kíváncsi, improvizációban jártas embereket várunk, akik szeretnek együtt alkotni, új nézőpontokat felfedezni és akár provokatív helyzetekre is reagálni."<tr>
+<td colspan="3" class="separator">Egész napos szűrések</td>
             <tr>
         <td class="time">08:00 – 14:00</td>
         <td class="location">SzívSN</td>
@@ -1285,10 +1346,20 @@ A rendezvény pártpolitikától mentes, közösségi jellegű. Arra kérjük a 
     }
   });
 
-  navLinks.addEventListener('click', closeMenu);
+document.querySelectorAll('.program').forEach(cell => {
+  const descRow = cell.closest('tr').nextElementSibling;
+  if (descRow && descRow.classList.contains('description-row')) {
+    // mark as clickable
+    cell.style.cursor = 'pointer';
+    cell.style.textDecoration = 'underline';
+
+    cell.addEventListener('click', () => {
+      const isVisible = descRow.style.display === 'table-row';
+      descRow.style.display = isVisible ? 'none' : 'table-row';
+    });
+  }
+});
 </script>
-
-
 </html>
 
 
