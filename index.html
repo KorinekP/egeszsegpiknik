@@ -167,6 +167,39 @@
       z-index: 1;
     }
 
+.time {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.panel-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2b4865;
+  background-color: #f0f4f8;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.panelists {
+  padding: 8px 0;
+}
+
+.panelist-link {
+  display: inline-block;
+  background-color: #2b4865;
+  color: white;
+  text-decoration: none;
+  padding: 4px 10px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.panelist-link:hover {
+  background-color: #223850;
+}
 
     .title-strip h1 {
       color: white;
@@ -276,7 +309,7 @@
 .schedule td {
   padding: 0.8rem;
   border-bottom: 1px solid #ddd;
-  vertical-align: top;
+  vertical-align: center;
 }
 
 .schedule tr:nth-child(even) {
@@ -284,9 +317,11 @@
 }
 
 .schedule td.time {
-  width: 18%;
+  width: 10%;
+  height: 100%;
   font-family: "Courier New", monospace;
-  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .schedule td.location {
@@ -500,6 +535,23 @@
   filter: none;
   margin: auto;
 }
+.question-link {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 12px;
+  background-color: #f0f4f8;
+  color: #2b4865;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.question-link:hover {
+  background-color: #dce5ee;
+}
+
 .schedule td.separator {
   background-color: #2b4865;
   color: #fff;
@@ -586,6 +638,7 @@
   .schedule td.location,
   .schedule td.program {
     width: auto; /* let columns shrink naturally */
+    font-size: 12px;
     white-space: normal; /* allow wrapping */
   }
 
@@ -668,169 +721,197 @@
   <img src="terkep.svg" width="100%">
 </a>
     </section>
-    <section id="program">
+<section id="program">
   <div class="section-title">
     <h2>Program</h2>
   </div>
   <div class="table-wrapper">
     <table class="schedule">
-      <thead>
-        <tr>
-          <th>Kezdési idő</th>
-          <th>Program a főszínpadon</th>
-        </tr>
-      </thead>
-
+      <td colspan="2" class="separator">Főszínpad programok</td>
       <tr>
         <td class="time">8:00</td>
-        <td>Változatos sporttevékenységek</td>
+        <td class="panel-title">Változatos sporttevékenységek</td>
       </tr>
       <tr>
         <td class="time">9:00</td>
-        <td>Hivatalos megnyitó</td>
+        <td class="panel-title">Hivatalos megnyitó</td>
       </tr>
       <tr class="panelists-row">
-  <td colspan="2">
-    <a href="https://www.linkedin.com/in/dr-baucsek-katalin-ll-m-0577271b6/">Dr. Baucsek Katalin</a>,
-    <a href="https://www.linkedin.com/in/s%C3%A1ra-viola-f%C3%BCl%C3%B6p-0133431a5/">Fülöp Sára-Viola</a>,
-    <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/">Dr. Ignácz Máté</a>,
-    <a href="https://www.linkedin.com/in/kokaj/?originalSubdomain=hu">Dr. Kóka János</a>,
-    <a href="https://www.facebook.com/drlaszloimre/?locale=hu_HU">Dr. László Imre</a>,
-    <a href="https://www.linkedin.com/in/richard-schwab-m-d-8159603/">Dr. Schwab Richárd</a>
+  <td colspan="2" class="panelists">
+    <a href="https://www.linkedin.com/in/dr-baucsek-katalin-ll-m-0577271b6/" class="panelist-link" style="font-size: small;">Dr. Baucsek Katalin</a>
+    <a href="https://www.linkedin.com/in/s%C3%A1ra-viola-f%C3%BCl%C3%B6p-0133431a5/" class="panelist-link" style="font-size: small;">Fülöp Sára-Viola</a>
+    <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/" class="panelist-link" style="font-size: small;">Dr. Ignácz Máté</a>
+    <a href="https://www.linkedin.com/in/kokaj/?originalSubdomain=hu" class="panelist-link" style="font-size: small;">Dr. Kóka János</a>
+    <a href="https://www.facebook.com/drlaszloimre/?locale=hu_HU" class="panelist-link" style="font-size: small;">Dr. László Imre</a>
+    <a href="https://www.linkedin.com/in/richard-schwab-m-d-8159603/" class="panelist-link" style="font-size: small;">Dr. Schwab Richárd</a>
   </td>
 </tr>
-
-
       <tr>
         <td class="time">10:00</td>
-        <td>Digitalizáció és innováció a magyar egészségügyben</td>
+        <td class="panel-title">Digitalizáció és innováció a magyar egészségügyben</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/dr-k%C3%A1d%C3%A1r-magdolna-599485216/">Dr. Kádár Magdolna</a>,
-          <a href="https://www.linkedin.com/in/konrad-keresztes/">Keresztes Konrád</a>,
-          <a href="https://www.linkedin.com/in/richard-schwab-m-d-8159603/">Dr. Schwab Richárd</a>,
-          <a href="https://www.linkedin.com/in/miklos-szocska/">Dr. Szócska Miklós</a>,
-          <a href="https://www.linkedin.com/in/laszlo-vastag-md-mba-9ab8a710/">Dr. Vastag László</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/dr-k%C3%A1d%C3%A1r-magdolna-599485216/" class="panelist-link">Dr. Kádár Magdolna</a>
+          <a href="https://www.linkedin.com/in/konrad-keresztes/" class="panelist-link">Keresztes Konrád</a>
+          <a href="https://www.linkedin.com/in/richard-schwab-m-d-8159603/" class="panelist-link">Dr. Schwab Richárd</a>
+          <a href="https://www.linkedin.com/in/miklos-szocska/" class="panelist-link">Dr. Szócska Miklós</a>
+          <a href="https://www.linkedin.com/in/laszlo-vastag-md-mba-9ab8a710/" class="panelist-link">Dr. Vastag László</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSerEMttsSNkjoIMJo88UOw7RfxlN62q-ge0em4XkA768OMETg/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">11:00</td>
-        <td>Fiatalok helye és kérdései az egészségügyben</td>
+        <td class="panel-title">Fiatalok helye és kérdései az egészségügyben</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
+        <td colspan="2" class="panelists">
           Dr. Takács Péter,
-          <a href="https://www.21no.hu/">21Nő az egészségügyért</a>: Kürthy Flóra, Nádasdy Mihály, Ódor Máté, Tverdota Hanna Zsófia,
-          A beszélgetést moderálja: <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/">Dr. Ignácz Máté</a>
+          <a href="https://www.21no.hu/" class="panelist-link">21Nő az egészségügyért: </a>
+          Kürthy Flóra, Nádasdy Mihály, Ódor Máté, Tverdota Hanna Zsófia <br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/" class="panelist-link">Dr. Ignácz Máté</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScYD4t7cPhLGhqwLo783P5kfsrhr0HSc9yY-FSLd8X0xbFEpA/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">12:00</td>
-        <td>A magyar és európai egészségügy HR helyzete</td>
+        <td class="panel-title">A magyar és európai egészségügy HR helyzete</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/szabolcs-dr-b%C3%A9k%C3%A1ssy-a1219bb7/">Dr. Békássy Szabolcs</a>,
-          <a href="https://www.linkedin.com/in/eszter-kovacs-23765340/">Dr. Kovács Eszter</a>,
-          <a href="https://www.linkedin.com/in/mikl%C3%B3s-kellermayer-09224222/">Dr. Kellermayer Miklós</a>,
-          A beszélgetést moderálja:<a href="https://www.linkedin.com/in/m%C3%A1rton-falus-0a2179210/">Falus Márton</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/szabolcs-dr-b%C3%A9k%C3%A1ssy-a1219bb7/" class="panelist-link">Dr. Békássy Szabolcs</a>
+          <a href="https://www.linkedin.com/in/eszter-kovacs-23765340/" class="panelist-link">Dr. Kovács Eszter</a>
+          <a href="https://www.linkedin.com/in/mikl%C3%B3s-kellermayer-09224222/" class="panelist-link">Dr. Kellermayer Miklós</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/m%C3%A1rton-falus-0a2179210/" class="panelist-link">Falus Márton</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdekTDuZk4KL9EO_LEM99ZILFflmogWWt3gX9DCitP7rCNomA/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">13:00</td>
-        <td>Magyar gyógyszerhelyzet</td>
+        <td class="panel-title">Magyar gyógyszerhelyzet</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/marcell-beres/">Béres Marcell</a>,
-          <a href="https://www.linkedin.com/in/bal%C3%A1zs-dancz%C3%A1k/">Danczák Balázs</a>,
-          <a href="https://www.linkedin.com/in/p%C3%A9ter-varga-pharmd-72079380/">Dr. Varga Péter</a>,
-          A beszélgetést moderálja:<a href="https://www.linkedin.com/in/zsigmond-dabasi-hal%C3%A1s-01a161338/">Dr. Dabasi-Halász Zsigmond</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/marcell-beres/" class="panelist-link">Béres Marcell</a>
+          <a href="https://www.linkedin.com/in/bal%C3%A1zs-dancz%C3%A1k/" class="panelist-link">Danczák Balázs</a>
+          <a href="https://www.linkedin.com/in/p%C3%A9ter-varga-pharmd-72079380/" class="panelist-link">Dr. Varga Péter</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/zsigmond-dabasi-hal%C3%A1s-01a161338/" class="panelist-link">Dr. Dabasi-Halász Zsigmond</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfRORSs2yTlEKMzw87u8UtkEu5MgeoN_XCS9d64--PS7g68ZA/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">14:00</td>
-        <td>Fenntartható egészségügy panelbeszélgetés</td>
+        <td class="panel-title">Fenntartható egészségügy panelbeszélgetés</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/nora-boussoussou-md-phd-3453351a5/">Dr. Boussoussou Nóra</a>,
-          <a href="https://www.linkedin.com/in/gabriellasodar/">Sódar Gabriella</a>,
-          <a href="https://www.linkedin.com/in/dianaurge/">Dr. Ürge-Vorsatz Diána</a>,
-          A beszélgetést moderálja:<a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/">Dr. Ürge Dóra</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/nora-boussoussou-md-phd-3453351a5/" class="panelist-link">Dr. Boussoussou Nóra</a>
+          <a href="https://www.linkedin.com/in/gabriellasodar/" class="panelist-link">Sódar Gabriella</a>
+          <a href="https://www.linkedin.com/in/dianaurge/" class="panelist-link">Dr. Ürge-Vorsatz Diána</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/" class="panelist-link">Dr. Ürge Dóra</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpY6PpChGgAIz7f4LQlgOCCudHM75x4UtxHmLA1ic4c-smzA/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">15:00</td>
-        <td>Gyermekkori elhízás</td>
+        <td class="panel-title">Gyermekkori elhízás</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/drkonigrobert/">Dr. Kőnig Róbert</a>,
-          <a href="https://www.linkedin.com/in/iren-kantor-652b01255/">Dr. Kántor Irén</a>,
-          <a href="https://www.linkedin.com/in/rebeka-lukasz-792426304/">Lukasz Rebeka</a>,
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/drkonigrobert/" class="panelist-link">Dr. Kőnig Róbert</a>
+          <a href="https://www.linkedin.com/in/iren-kantor-652b01255/" class="panelist-link">Dr. Kántor Irén</a>
+          <a href="https://www.linkedin.com/in/rebeka-lukasz-792426304/" class="panelist-link">Lukasz Rebeka</a><br>
           A beszélgetést moderálja: Dr. Czirják Janka
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdpx-jkKBEVa4z-XDKjiwK3A9PAmFtlc3klh8T_76ww_cyjnw/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">16:00</td>
-        <td>A család mentális egészsége</td>
+        <td class="panel-title">A család mentális egészsége</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/mih%C3%A1ly-dr-domj%C3%A1n-44858b182/">Dr. Domján Mihály</a>,
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/mih%C3%A1ly-dr-domj%C3%A1n-44858b182/" class="panelist-link">Dr. Domján Mihály</a>
           Kun Viktória,
           Manyasz Erika,
-          <a href="https://www.linkedin.com/in/dr-sr%C3%A1di-p%C3%A9ter-199044276/">Dr. Srádi Péter</a>,
-          A beszélgetést moderálja: <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/">Dr. Ignácz Máté</a>
+          <a href="https://www.linkedin.com/in/dr-sr%C3%A1di-p%C3%A9ter-199044276/" class="panelist-link">Dr. Srádi Péter</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/m%C3%A1t%C3%A9-ign%C3%A1cz-385976216/" class="panelist-link">Dr. Ignácz Máté</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSesQ_2hgnDJYSv5Qm0xg642Dp1ANAZsaDAyl01JGQbixSZvHw/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">17:00</td>
-        <td>A védőoltások megítélése Magyarországon</td>
+        <td class="panel-title">A védőoltások megítélése Magyarországon</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/agnes-galg%C3%B3czi-dr-a78a7772/">Dr. Galgóczi Ágnes</a>,
-          <a href="https://www.linkedin.com/in/zsofia-pusztai-b8326725/">Dr. Pusztai Zsófia</a>,
-          <a href="https://www.linkedin.com/in/katalin-szaloki-dr-9955282a/">Dr. Szalóki Katalin</a>,
-          A beszélgetést moderálja: <a href="https://www.facebook.com/profile.php?id=100009433995126">Dr. Ürge Dorka</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/agnes-galg%C3%B3czi-dr-a78a7772/" class="panelist-link">Dr. Galgóczi Ágnes</a>
+          <a href="https://www.linkedin.com/in/zsofia-pusztai-b8326725/" class="panelist-link">Dr. Pusztai Zsófia</a>
+          <a href="https://www.linkedin.com/in/katalin-szaloki-dr-9955282a/" class="panelist-link">Dr. Szalóki Katalin</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.facebook.com/profile.php?id=100009433995126" class="panelist-link">Dr. Ürge Dorka</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfWJW9eU_evmfkDaAsVJvXgF-p_fd0kYBZnEcFkrST6GQU2GQ/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">18:00</td>
-        <td>Perinatális női egészség</td>
+        <td class="panel-title">Perinatális női egészség</td>
       </tr>
       <tr class="panelists-row">
-        <td colspan="2">
-          <a href="https://www.linkedin.com/in/dorottya-m%C3%BChl-a96b4778/">Dr. Mühl Dorottya</a>,
-          <a href="https://www.linkedin.com/in/anna-sevcsik-m/">Sevcsik Anna</a>,
-          <a href="https://hallermedical.hu/dr-berkes-bara-eva/">Dr Berkes-Bara Éva</a>,
-          <a href="https://www.linkedin.com/in/attila-p%C3%B3th-49780010/">Póth Attila</a>,
-          A beszélgetést moderálja: <a href="https://www.linkedin.com/in/dr-czirjak-janka-44858b182/">Dr. Czirják Janka</a>
+        <td colspan="2" class="panelists">
+          <a href="https://www.linkedin.com/in/dorottya-m%C3%BChl-a96b4778/" class="panelist-link">Dr. Mühl Dorottya</a>
+          <a href="https://www.linkedin.com/in/anna-sevcsik-m/" class="panelist-link">Sevcsik Anna</a>
+          <a href="https://hallermedical.hu/dr-berkes-bara-eva/" class="panelist-link">Dr Berkes-Bara Éva</a>
+          <a href="https://www.linkedin.com/in/attila-p%C3%B3th-49780010/" class="panelist-link">Póth Attila</a><br>
+          A beszélgetést moderálja:
+          <a href="https://www.linkedin.com/in/dr-czirjak-janka-44858b182/" class="panelist-link">Dr. Czirják Janka</a>
+          <br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSc8g_4NzOlqmNETxb4j6O8p9TxT1hOl5T47tfGhd6G1lgZq9g/viewform?usp=header" class="question-link">Kérdezzen a panelistáktól</a>
+
         </td>
       </tr>
 
       <tr>
         <td class="time">19:00</td>
-        <td>Medikus zenekar koncertje</td>
+        <td class="panel-title">Medikus zenekar koncertje</td>
       </tr>
       <tr>
         <td class="time">19:30</td>
-        <td>Moldvai táncház - zenél az Iszka Banda</td>
+        <td class="panel-title">Moldvai táncház - zenél az Iszka Banda</td>
       </tr>
     </table>
   </div>
 </section>
+
     <section id="workshops">
   <div class="section-title">
     <h2>Workshopok és Szűrések</h2>
@@ -1485,29 +1566,3 @@ document.querySelectorAll('.program').forEach(cell => {
 });
 </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
